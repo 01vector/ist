@@ -50,10 +50,6 @@ import {
   },
   methods: {
     ...mapActions("doctors", ["setSearchWord"]),
-
-    onChange: function () {
-      console.log(this.$data.searchWord);
-    },
   },
 })
 export default class MainPage extends Vue {
