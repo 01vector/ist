@@ -9,10 +9,9 @@ v-container(class='cbx-container')
         v-combobox(class="rounded-lg ml-auto"
           v-model="searchWord"
           :items="getDisplayedDoctors"
-          @keydown.enter="onChange()"
-          item-text="title"
           :label='placeholder'
           :placeholder="placeholder"
+          item-text="title"
           rounded=false
           clearable
           outlined
@@ -34,7 +33,7 @@ v-container(class='cbx-container')
 </template>
 
 <script lang="ts">
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import Vue from "vue";
 import Options from "vue-class-component";
 import {
@@ -47,9 +46,6 @@ import {
 @Options({
   computed: {
     ...mapGetters("doctors", ["getDisplayedDoctors"]),
-  },
-  methods: {
-    ...mapActions("doctors", ["setSearchWord"]),
   },
 })
 export default class MainPage extends Vue {
